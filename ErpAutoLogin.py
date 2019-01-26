@@ -7,13 +7,14 @@ from pytesseract import image_to_string
 from urllib.request import urlretrieve
 from PIL import Image
 from io import BytesIO
+from getpass import getpass
 import sys,time
 
 
 user = input('''Enter your Roll No in the format
 BE/10xxx/1x :
 ''')
-passwd = input('Enter your password : ')
+passwd = getpass('Enter your password : ')
 browser = webdriver.Firefox()
 browser.get('http://erp.bitmesra.ac.in')
 user_name = browser.find_element_by_id('txt_username')
